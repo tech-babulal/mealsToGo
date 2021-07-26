@@ -7,38 +7,17 @@
  */
 
 import React from 'react';
+import {StatusBar} from 'react-native';
 
-import {View,StyleSheet,Text,SafeAreaView,Platform, StatusBar} from 'react-native';
+import {RestaurantsScreen} from './src/features/restaurants/screens/restaurants.screen';
 
-
-
-
-function App()  {
- 
+function App() {
   return (
-
     <>
-    <SafeAreaView style={{flex:1}}>
-
-      <View style={{padding:16, backgroundColor:'green'}}>
-        <Text>Search</Text>
-      </View>
-      <View style={{flex: 1, padding:16, backgroundColor:'blue'}}>
-        <Text>List </Text>
-      </View>
-
-
-    </SafeAreaView>
-    <StatusBar style='auto'/>
-
+      <RestaurantsScreen />
+      <StatusBar style="auto" />
     </>
-  
   );
-};
-
-
-const styles = StyleSheet.create({
-
-});
+}
 
 export default App;
