@@ -1204,6 +1204,18 @@
   resolved "https://repo.huaweicloud.com/repository/npm/@react-navigation/elements/-/elements-1.0.1.tgz"
   integrity sha512-KU6DPqmFmD4E+AwXOBzrqVBYG1Gd8HzPfbCk1PGzUjIiQOg6xv1pyfJ/d2x6aEOzxX5jtuNVCx6S553ZLkJP9Q==
 
+"@react-navigation/elements@^1.0.4":
+  version "1.0.4"
+  resolved "https://repo.huaweicloud.com/repository/npm/@react-navigation/elements/-/elements-1.0.4.tgz#7694473716ebb8b5d69523bc75924d81955e19a8"
+  integrity sha512-WtaQXZ1y0aVQlQegyS2quOeSSqBvASZThdruW9AAgVbqs6qJMwbKjE5SOEsZS2jQX8OoeZNz+8bJHqVflynunw==
+
+"@react-navigation/material-bottom-tabs@^6.0.1":
+  version "6.0.4"
+  resolved "https://repo.huaweicloud.com/repository/npm/@react-navigation/material-bottom-tabs/-/material-bottom-tabs-6.0.4.tgz#6de55a4c48c7be8cf5c630d3e609e8edc62f390b"
+  integrity sha512-eV1Vpkuy8fSUtKng7hG5UrQ3kYEHG+IM2kdYUkxtcdvtu4+2Vws17ikAuvSN4RhTt7vJS8p8N71CGy8KvNR90w==
+  dependencies:
+    "@react-navigation/elements" "^1.0.4"
+
 "@react-navigation/native@^6.0.1":
   version "6.0.1"
   resolved "https://repo.huaweicloud.com/repository/npm/@react-navigation/native/-/native-6.0.1.tgz"
@@ -2021,7 +2033,7 @@ camelcase@^6.0.0:
 
 camelize@^1.0.0:
   version "1.0.0"
-  resolved "https://repo.huaweicloud.com/repository/npm/camelize/-/camelize-1.0.0.tgz"
+  resolved "https://repo.huaweicloud.com/repository/npm/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
 caniuse-lite@^1.0.30001219:
@@ -5604,6 +5616,11 @@ react-native@0.64.2:
     use-subscription "^1.0.0"
     whatwg-fetch "^3.0.0"
     ws "^6.1.4"
+
+react-navigation-material-bottom-tabs@^2.3.4:
+  version "2.3.4"
+  resolved "https://repo.huaweicloud.com/repository/npm/react-navigation-material-bottom-tabs/-/react-navigation-material-bottom-tabs-2.3.4.tgz#fddcd1c3de9355e6c527a612b23dfb4319f6380b"
+  integrity sha512-NHHFsDg8AJupfPJ2ybIjCzT8VifBFd0LXxAO+RBermtHF2wrHVyFIcpTnYDr1WHgwwRAOrKKg1Hd2TG7TjX6Bg==
 
 react-refresh@^0.4.0:
   version "0.4.3"
