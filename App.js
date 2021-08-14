@@ -7,19 +7,21 @@
  */
 
 import React from 'react';
-import {StatusBar, View, Text, SafeAreaView} from 'react-native';
+import {StatusBar, Text} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
 import {theme} from './src/infrastructure/theme';
 import {NavigationContainer} from '@react-navigation/native';
 //import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 //import { SafeAreaProvider } from 'react-native-safe-area-context';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+//import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {RestaurantsScreen} from './src/features/restaurants/screens/restaurants.screen';
 import {SafeArea} from './src/components/utility/safe-area.component';
 import {RestaurantsContextProvider} from './src/services/restaurants/restaurants.context';
+
+import {LocationContextProvider} from './src/services/location/location.context';
 /*import {
   useFonts as useOswald,
   Oswald_400Regular,
@@ -81,20 +83,22 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer>
-            <Tab.Navigator
-              initialRouteName="Restaurants"
-              activeColor="#B71C1C"
-              inactiveColor="#757575"
-              barStyle={{backgroundColor: theme.colors.brand.inverse}}
-              screenOptions={createScreenOptions}>
-              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-              <Tab.Screen name="Map" component={Map} />
-              <Tab.Screen name="Settings" component={Setting} />
-            </Tab.Navigator>
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <Tab.Navigator
+                initialRouteName="Restaurants"
+                activeColor="#B71C1C"
+                inactiveColor="#757575"
+                barStyle={{backgroundColor: theme.colors.brand.inverse}}
+                screenOptions={createScreenOptions}>
+                <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+                <Tab.Screen name="Map" component={Map} />
+                <Tab.Screen name="Settings" component={Setting} />
+              </Tab.Navigator>
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <StatusBar style="auto" />
     </>
