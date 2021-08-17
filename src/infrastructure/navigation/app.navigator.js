@@ -5,6 +5,7 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import {Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {RestaurantsNavigator} from './rastaurants.navigator';
+import {MapScreen} from '../../features/map/screens/map.screen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -23,12 +24,6 @@ const createScreenOptions = ({route}) => {
   };
 };
 
-const Map = () => (
-  <SafeArea>
-    <Text>Map</Text>
-  </SafeArea>
-);
-
 const Setting = () => (
   <SafeArea>
     <Text>Setting</Text>
@@ -44,7 +39,7 @@ export const AppNavigator = () => (
       barStyle={{backgroundColor: 'white'}}
       screenOptions={createScreenOptions}>
       <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-      <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="Map" component={MapScreen} />
       <Tab.Screen name="Settings" component={Setting} />
     </Tab.Navigator>
   </NavigationContainer>
