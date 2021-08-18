@@ -1,5 +1,7 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
+
 import styled from 'styled-components/native';
+import {TouchableOpacity} from 'react-native';
 
 import {List, Avatar} from 'react-native-paper';
 
@@ -21,12 +23,23 @@ export const SettingsScreen = ({navigation}) => {
 
   //console.log(user);
   //console.log(isAuthenticated);
+
+  const onBackToCamera = () => {
+    setImg(null);
+  };
+
+  const onPicture = uri => {
+    setImg(null);
+  };
+  const [img, setImg] = useState(null);
   return (
     <SafeArea>
       <AvatarContainer>
-        <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+        <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
+          <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+        </TouchableOpacity>
         <Spacer position="top" size="large">
-          {<Text variant="label">{user.email}</Text>}
+          <Text variant="label">{user.email}</Text>
         </Spacer>
       </AvatarContainer>
 
