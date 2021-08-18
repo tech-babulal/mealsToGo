@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {StatusBar} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
 import {theme} from './src/infrastructure/theme';
@@ -20,6 +20,8 @@ import {RestaurantsContextProvider} from './src/services/restaurants/restaurants
 import {LocationContextProvider} from './src/services/location/location.context';
 
 import {FavouritesContextProvider} from './src/services/favourites/favourites.context';
+
+import {AuthenticationContextProvider} from './src/services/authentication/authentication.context';
 
 import * as firebase from 'firebase';
 
@@ -46,8 +48,9 @@ var firebaseConfig = {
   messagingSenderId: '288293770008',
   appId: '1:288293770008:web:f13e88d3027309a9f5446d',
 };
-
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 function App() {
   /* let [oswaldLoaded] = useOswald({
@@ -63,18 +66,39 @@ function App() {
   }
  */
 
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     firebase
+  //       .auth()
+  //       .signInWithEmailAndPassword('tech.babulal@gmail.com', 'babu@123')
+  //       .then(user => {
+  //         //console.log(user);
+  //         setIsAuthenticated(true);
+  //       })
+  //       .catch(e => {
+  //         console.log(e);
+  //       });
+  //   }, 2000);
+  // }, []);
+
   //console.log(restaurantsRequest);
+  // if (!isAuthenticated) return null;
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <FavouritesContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <Navigation />
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
-        </FavouritesContextProvider>
+        <AuthenticationContextProvider>
+          <Navigation />
+          {/* <FavouritesContextProvider>
+            <LocationContextProvider>
+              <RestaurantsContextProvider>
+                <Navigation />
+              </RestaurantsContextProvider>
+            </LocationContextProvider>
+          </FavouritesContextProvider>
+        */}
+        </AuthenticationContextProvider>
       </ThemeProvider>
       <StatusBar style="auto" />
     </>

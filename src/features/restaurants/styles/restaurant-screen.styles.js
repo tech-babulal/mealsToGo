@@ -18,3 +18,9 @@ export const RestaurantListContainer = styled.View`
 export const RestaurantList = styled(FlatList).attrs({})`
   padding: ${props => props.theme.space[3]};
 `;
+
+// export const RestaurantList = styled(FlatList).attrs({
+//   contentContainerStyle: {
+//     padding: 16,
+//   },
+// })``;

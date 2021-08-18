@@ -13,9 +13,12 @@ export const RestaurantsNavigator = () => {
   return (
     <RestaurantStack.Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
       }}>
       <RestaurantStack.Screen
+        options={{
+          header: () => null,
+        }}
         name="Restaurants"
         component={RestaurantsScreen}
       />
