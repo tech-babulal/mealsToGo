@@ -1,7 +1,7 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import styled from 'styled-components/native';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 
 import {List, Avatar} from 'react-native-paper';
 
@@ -9,6 +9,7 @@ import {Text} from '../../../components/typography/text.component';
 import {Spacer} from '../../../components/spacer/spacer.component';
 import {SafeArea} from '../../../components/utility/safe-area.component';
 import {AuthenticationContext} from '../../../services/authentication/authentication.context';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 const SettingsItem = styled(List.Item)`
   padding: ${props => props.theme.space[3]};
@@ -21,22 +22,35 @@ export const SettingsScreen = ({navigation}) => {
   const {onLogout, user} = useContext(AuthenticationContext);
   //console.log('UserDetails_1');
 
-  //console.log(user);
-  //console.log(isAuthenticated);
-
-  const onBackToCamera = () => {
-    setImg(null);
-  };
-
-  const onPicture = uri => {
-    setImg(null);
-  };
+  //<TouchableOpacity onPress={() => navigation.navigate('Camera')}></TouchableOpacity>
   const [img, setImg] = useState(null);
+  // //const [response, setResponse] = React.useState(null);
+
+  useEffect(() => {
+    //console.log(img.assets[0].fileName);
+    //if (!img) return null;
+    //console.log(img.assets[0].uri);
+  }, [img]);
+
   return (
     <SafeArea>
       <AvatarContainer>
-        <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
-          <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+        <TouchableOpacity
+          onPress={() => {
+            //console.log();
+            launchCamera(null, setImg);
+          }}>
+          {!img && (
+            <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+          )}
+          {img && (
+            <Avatar.Image
+              size={180}
+              source={{uri: img.assets[0].uri}}
+
+              //backgroundColor="#2182BD"
+            />
+          )}
         </TouchableOpacity>
         <Spacer position="top" size="large">
           <Text variant="label">{user.email}</Text>
