@@ -18,8 +18,8 @@ export const LocationContextProvider = ({children}) => {
     locationRequest(keyword.toLowerCase())
       .then(locationTransform)
       .then(result => {
+        setError(null);
         setIsLoading(false);
-
         setLocation(result);
         // console.log(result);
       })
@@ -36,28 +36,29 @@ export const LocationContextProvider = ({children}) => {
     //console.log(searchkeyword);
   };
 
-  const retriveRestaurants = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      locationRequest()
-        .then(locationTransform)
-        .then(result => {
-          //console.log(transformedResponse);
-          setIsLoading(false);
+  // const retriveRestaurants = () => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     locationRequest()
+  //       .then(locationTransform)
+  //       .then(result => {
+  //         //console.log(transformedResponse);
+          
+  //         setIsLoading(false);
 
-          setLocation(result);
-          // console.log(result);
-        })
-        .catch(err => {
-          setIsLoading(false);
-          setError(err);
-        });
-    }, 5000);
-  };
+  //         setLocation(result);
+  //         // console.log(result);
+  //       })
+  //       .catch(err => {
+  //         setIsLoading(false);
+  //         setError(err);
+  //       });
+  //   }, 5000);
+  // };
 
-  useEffect(() => {
-    retriveRestaurants();
-  }, []);
+  // useEffect(() => {
+  //   retriveRestaurants();
+  // }, []);
 
   return (
     <LocationContext.Provider

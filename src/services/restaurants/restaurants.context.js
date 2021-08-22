@@ -10,23 +10,23 @@ export const RestaurantsContextProvider = ({children}) => {
   const [error, setError] = useState(null);
   const {location} = useContext(LocationContext);
 
-  const retriveRestaurants = location => {
+  const retriveRestaurants = locationInput => {
     setIsLoading(true);
     setRestaurants([]);
-    setTimeout(() => {
-      restaurantsRequest(location)
-        .then(restaurantsTransform)
-        .then(result => {
-          //console.log(transformedResponse);
-          setIsLoading(false);
+    restaurantsRequest(locationInput)
+      .then(restaurantsTransform)
+      .then(result => {
+        //console.log(transformedResponse);
+        setError(null);
+        setIsLoading(false);
 
-          setRestaurants(result);
-        })
-        .catch(err => {
-          setIsLoading(false);
-          setError(err);
-        });
-    }, 5000);
+        setRestaurants(result);
+      })
+      .catch(err => {
+        setRestaurants([]);
+        setIsLoading(false);
+        setError(err);
+      });
   };
 
   useEffect(() => {
