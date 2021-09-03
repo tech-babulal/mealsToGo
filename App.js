@@ -84,14 +84,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
           <Navigation />
-          {/* <FavouritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <Navigation />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavouritesContextProvider>
-        */}
         </AuthenticationContextProvider>
       </ThemeProvider>
       <StatusBar style="auto" />
