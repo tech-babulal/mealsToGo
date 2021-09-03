@@ -43,7 +43,7 @@ export const LocationContextProvider = ({children}) => {
   //       .then(locationTransform)
   //       .then(result => {
   //         //console.log(transformedResponse);
-          
+
   //         setIsLoading(false);
 
   //         setLocation(result);

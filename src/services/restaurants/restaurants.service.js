@@ -1,4 +1,3 @@
-import {mockImages, mocks} from '../../../functions/places/mock';
 import camelize from 'camelize';
 import {host, isMock} from '../../utils/env';
 

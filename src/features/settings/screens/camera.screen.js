@@ -1,4 +1,4 @@
-import React, {PureComponent, Alert, StyleSheet} from 'react';
+import React, {PureComponent} from 'react';
 import {AuthButton} from '../../../features/account/components/account.styles';
 import {RNCamera} from 'react-native-camera';
 export class CameraScreen extends PureComponent {
@@ -43,6 +43,7 @@ export class CameraScreen extends PureComponent {
             this.camera = ref;
           }}
           captureAudio={false}
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{flex: 1}}
           type={RNCamera.Constants.Type.front}
           androidCameraPermissionOptions={{

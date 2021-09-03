@@ -1,4 +1,4 @@
-import React, {useState, createContext, useEffect, useMemo} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 import {useContext} from 'react/cjs/react.development';
 import {LocationContext} from '../location/location.context';
 import {restaurantsRequest, restaurantsTransform} from './restaurants.service';

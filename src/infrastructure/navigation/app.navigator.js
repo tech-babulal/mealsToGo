@@ -1,18 +1,15 @@
-import React, {useContext} from 'react';
-import {SafeArea} from '../../components/utility/safe-area.component';
+import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {Text, Button} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 import {RestaurantsNavigator} from './rastaurants.navigator';
 import {MapScreen} from '../../features/map/screens/map.screen';
-import {AuthenticationContext} from '../../services/authentication/authentication.context';
 import {SettingsNavigator} from './settings.navigator';
 import {RestaurantsContextProvider} from '../../services/restaurants/restaurants.context';
 import {LocationContextProvider} from '../../services/location/location.context';
 import {FavouritesContextProvider} from '../../services/favourites/favourites.context';
 import {CheckoutScreen} from '../../features/checkout/screens/checkout.screen';
 import {CartContextProvider} from '../../services/cart/cart.context';
+import {colors} from '../theme/colors';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -39,9 +36,9 @@ export const AppNavigator = () => (
         <CartContextProvider>
           <Tab.Navigator
             initialRouteName="Restaurants"
-            activeColor="#B71C1C"
-            inactiveColor="#757575"
-            barStyle={{backgroundColor: 'white'}}
+            activeColor={colors.brand.primary}
+            inactiveColor={colors.brand.tabDisable}
+            barStyle={{backgroundColor: colors.brand.inverse}}
             screenOptions={createScreenOptions}>
             <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
             <Tab.Screen name="Map" component={MapScreen} />

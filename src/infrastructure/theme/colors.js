@@ -4,6 +4,7 @@ export const colors = {
     secondary: '#5282BD',
     muted: '#C6DAF7',
     inverse: '#FFFFFF',
+    tabDisable: '#616161',
   },
   ui: {
     primary: '#262626',

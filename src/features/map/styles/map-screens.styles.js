@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import {View, SafeAreaView, StatusBar, FlatList} from 'react-native';
+import {View} from 'react-native';
 
 export const SearchContainer = styled(View)`
   padding: ${props => props.theme.space[3]};

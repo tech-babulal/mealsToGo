@@ -1,7 +1,5 @@
 import React, {useContext, useState} from 'react';
 import {TouchableOpacity} from 'react-native';
-
-import {Searchbar} from 'react-native-paper';
 import {RestaurantInfoCard} from '../components/restaurant-info-card.component';
 import {RestaurantList} from '../styles/restaurant-screen.styles';
 import {Spacer} from '../../../components/spacer/spacer.component';

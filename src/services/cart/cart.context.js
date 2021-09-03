@@ -1,12 +1,9 @@
-import React, {createContext, useState, useEffect, useContext} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-import {AuthenticationContext} from '../authentication/authentication.context';
+import React, {createContext, useState, useEffect} from 'react';
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({children}) => {
-  const {user} = useContext(AuthenticationContext);
+  //const {user} = useContext(AuthenticationContext);
 
   const [cart, setCart] = useState([]);
   const [restaurant, setRestaurant] = useState(null);

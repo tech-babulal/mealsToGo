@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {StatusBar} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
 import {theme} from './src/infrastructure/theme';
@@ -14,12 +14,6 @@ import {theme} from './src/infrastructure/theme';
 //import { SafeAreaProvider } from 'react-native-safe-area-context';
 //import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Navigation} from './src/infrastructure/navigation';
-
-import {RestaurantsContextProvider} from './src/services/restaurants/restaurants.context';
-
-import {LocationContextProvider} from './src/services/location/location.context';
-
-import {FavouritesContextProvider} from './src/services/favourites/favourites.context';
 
 import {AuthenticationContextProvider} from './src/services/authentication/authentication.context';
 

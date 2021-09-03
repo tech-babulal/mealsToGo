@@ -1,6 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react';
 import MapView from 'react-native-maps';
-import {SafeArea} from '../../../components/utility/safe-area.component';
 import styled from 'styled-components/native';
 import {Search} from '../components/search.component';
 
@@ -36,7 +35,7 @@ export const RestaurantMap = ({navigation}) => {
           latitude: lat,
           longitude: lng,
           latitudeDelta: latDelta,
-          longitudeDelta: 0.02,
+          longitudeDelta: 0.01,
         }}>
         {restaurants.map(restaurant => {
           return (
